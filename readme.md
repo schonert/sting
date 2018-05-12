@@ -1,8 +1,8 @@
-# Hey there
+# Sting 1.5kb
 > is a simple non-dependent, lightweight and customisable notification engine.
 
 ## Description
-Notifications comes in many shapes and forms and yet they all seem to have the same requirements - or at least the most of them. ***Hey there*** serves the purpos of kickstarting and streamlining your on-site notifications so that you can focus on getting the right messages out there.
+Notifications comes in many shapes and forms and yet they all seem to have the same requirements - or at least the most of them. ***Sting*** serves the purpos of kickstarting and streamlining your on-site notifications so that you can focus on getting the right messages out there.
 
 Jumping into the source you'd quickly realize that there's no magic going on here. No fancy buzzword-dependencies, promises, observables or other browser-support-concerning-functionality. Just plug it in and get your message out there.
 
@@ -27,7 +27,7 @@ topNotifications.notify('Hey guys - Check this out!');
 _I thought you might ask that_
 Here is an example of how to extend the functinallity to support promises
 ```JavaScript
-class HeyPromise extends Hey {
+class StingPromise extends Sting {
 	constructor(config) {
 		super(config);
 	}
@@ -39,6 +39,11 @@ class HeyPromise extends Hey {
 		});
 	}
 }
+
+const topNotification = new StingPromise();
+topNotification.notify('Sleeeeek').then((notification) => {
+	console.log('awesome');
+});
 
 ```
 

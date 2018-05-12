@@ -1,0 +1,28 @@
+{
+  "name": "sting",
+  "version": "0.0.1",
+  "description": "Sting! Is a tiny lightweight, themable and highly customizable notification-popup.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode=production",
+    "watch": "webpack -w --progress --mode=development"
+  },
+  "keywords": [
+    "Notification",
+    "JavaScript",
+    "Lightweight",
+    "Venilla",
+    "Zero",
+    "Dependencies"
+  ],
+  "author": "Stefan Schonert",
+  "license": "ISC",
+  "devDependencies": {
+    "html-loader": "^0.5.5",
+    "ts-loader": "^4.2.0",
+    "typescript": "^2.8.3",
+    "webpack": "^4.6.0",
+    "webpack-cli": "^2.0.15"
+  }
+}

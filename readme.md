@@ -10,7 +10,7 @@ Jumping into the source you'd quickly realize that there's no magic going on her
 _chill dude - here you go!_
 ```JavaScript
 // You obviusly need to include Sting
-import Sting from `sting';
+import Sting from 'sting';
 
 // Make your first Sting notification area, with everything on default
 const topNotifications = new Sting({

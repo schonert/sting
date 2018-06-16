@@ -1,8 +1,8 @@
-import Sting from './sting.class';
-export default Sting;
-
 export * from './sting.class';
-export * from './sting-base.class';
-export * from './sting-notification.class';
+export { default } from './sting.class';
 
-window['Sting'] = Sting;
+export * from './sting-base.class';
+export { default as StingBase } from './sting-base.class';
+
+export * from './sting-notification.class';
+export { default as StingNotification } from './sting-notification.class';

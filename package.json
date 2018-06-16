@@ -1,12 +1,12 @@
 {
   "name": "sting",
-  "version": "0.0.1",
+  "version": "0.0.21",
   "description": "Sting! Is a tiny lightweight, themable and highly customizable notification-popup.",
-  "main": "dist/sting.js",
-  "module": "src/index.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode=production",
+	"republish": "yarn run build",
+    "build": "tsc",
     "watch": "webpack -w --progress --mode=development"
   },
   "keywords": [

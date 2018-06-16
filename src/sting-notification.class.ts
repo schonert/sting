@@ -22,10 +22,7 @@ export default class StingNotification extends StingBase {
 		this.on('leave', this.remove);
 
 		if(this.config.duration > 0) {
-			this.on('enter', () => {
-				let timeout = setTimeout(() => this.leave(), this.config.duration);
-				this.on('leave', () => clearTimeout(timeout));
-			});
+			this.setTimer();
 		}
 	}
 
@@ -39,5 +36,28 @@ export default class StingNotification extends StingBase {
 		this.broadcast('leave');
 		this.broadcast('leave:post');
 		return this;
+	}
+
+	private setTimer() {
+
+		this.on('enter', () => {
+			let remaining = this.config.duration;
+			let start = Date.now();
+			let timeout = setTimeout(() => this.leave(), this.config.duration);
+
+			this.on('leave', () => clearTimeout(timeout));
+
+			this.element.addEventListener('mouseenter', () => {
+				this.config.duration -= Date.now() - start;
+				window.clearTimeout(timeout);
+			});
+
+			this.element.addEventListener('mouseleave', () => {
+				start = Date.now();
+				window.clearTimeout(timeout);
+				timeout = setTimeout(() => this.leave(), this.config.duration);
+			});
+		});
+
 	}
 }
